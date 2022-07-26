@@ -1,0 +1,81 @@
+/* basic section heading */
+@mixin section-heading {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  margin-top: 0px;
+  padding: 10px 0 25px;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  background: url("../images/bg_front01.svg") no-repeat;
+  background-position: center;
+  @content;
+}
+
+/* basic section text */
+@mixin section-text {
+  font-size: 2.4rem;
+  margin-bottom: 0;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* basic section note */
+@mixin section-note {
+  font-size: 1.5rem;
+  text-align: center;
+  display: block;
+  font-weight: 500;
+  padding-left: 1em;
+  text-indent: -1em;
+  @content;
+}
+
+/* basic table */
+@mixin basic-table($class-name) {
+  .#{$class-name} {
+    &__table-wrap {
+      margin-top: 50px;
+      border: 2px solid $basic-color;
+      padding: 40px 100px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    &__table {
+      width: 100%;
+      font-size: 1.6rem;
+      font-weight: 500;
+      border-spacing: 0;
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid $basic-color;
+      }
+      th {
+        background-color: #80a40e;
+        color: #fff;
+        width: 50%;
+      }
+      tr {
+        &:nth-child(even) {
+          background-color: #dfeeb6;
+        }
+      }
+    }
+    @content;
+  }
+}
+
+/* number heading */
+@mixin number-heading($color) {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 40px;
+  background-color: $color;
+  width: 40px;
+  display: inline-block;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  text-align: center;
+}
