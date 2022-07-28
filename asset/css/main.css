@@ -1,4 +1,12 @@
 @charset "UTF-8";
+/* breakpoints */
+/* responsive font size */
+/* media query */
+/* basic section heading */
+/* basic section text */
+/* basic section note */
+/* basic table */
+/* number heading */
 /* variables */
 /* 基本カラー */
 /* 基本背景カラー1 */
@@ -33,17 +41,32 @@ figure {
   display: flex; }
 
 .wrap {
-  padding: 0 10%;
+  padding: 0 5%;
+  margin: 0 auto;
   max-width: 1300px; }
 
 .wrap-vertical {
   padding: 7% 0; }
 
+.sm-only {
+  display: none; }
+  @media screen and (max-width: 768px) {
+    .sm-only {
+      display: block; } }
+
+@media screen and (max-width: 768px) {
+  .md-only {
+    display: none; } }
+
+/* breakpoints */
+/* responsive font size */
+/* media query */
 /* basic section heading */
 /* basic section text */
 /* basic section note */
 /* basic table */
 /* number heading */
+/* responsive font size */
 /* header */
 .header {
   background-color: #007daf;
@@ -56,9 +79,15 @@ figure {
     padding: 0 20px;
     justify-content: space-between;
     align-items: center; }
+    @media screen and (max-width: 768px) {
+      .header__nav a:not(.header__contact-link) {
+        display: contents; } }
   .header__heading {
     margin: 0;
     width: 200px; }
+    @media screen and (max-width: 768px) {
+      .header__heading {
+        width: 140px; } }
   .header__flex-item--after {
     gap: 20px; }
   .header__contact-link {
@@ -69,12 +98,21 @@ figure {
     padding: 10px;
     border-radius: 10px;
     line-height: 22px; }
+    @media screen and (max-width: 768px) {
+      .header__contact-link {
+        padding: 5px; } }
   .header__tel-image {
     margin-top: -3px; }
+    @media screen and (max-width: 768px) {
+      .header__tel-image {
+        display: none; } }
 
 /* main visual */
 .main-visual {
   margin-top: 79px; }
+  @media screen and (max-width: 768px) {
+    .main-visual {
+      margin-top: 62px; } }
 
 /* cta section */
 .cta {
@@ -84,9 +122,18 @@ figure {
   .cta__flex-wrap {
     justify-content: space-between;
     gap: 25px; }
+    @media screen and (max-width: 1100px) {
+      .cta__flex-wrap {
+        flex-direction: column; } }
   .cta__flex-item {
     width: 50%;
-    font-family: "M PLUS Rounded 1c", sans-serif; }
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    justify-content: space-evenly;
+    align-items: center; }
+    @media screen and (max-width: 1100px) {
+      .cta__flex-item {
+        flex-direction: column;
+        width: 100%; } }
   .cta__title {
     font-size: 2.4rem;
     width: 180px;
@@ -96,22 +143,30 @@ figure {
     display: inline-block;
     padding: 10px 30px;
     font-weight: bold;
-    border-radius: 10px;
-    float: left; }
+    border-radius: 10px; }
+    @media screen and (max-width: 1100px) {
+      .cta__title {
+        width: 250px; } }
   .cta__description {
     font-size: 4.8rem;
     font-weight: bold;
     line-height: 1.2;
-    position: relative; }
+    position: relative;
+    margin-left: 0; }
     .cta__description span {
       font-size: 0.5em; }
       .cta__description span:first-of-type {
         margin-left: 10px; }
       .cta__description span.small {
         font-size: 1.6rem;
+        font-weight: bold;
         position: absolute;
         bottom: -17px;
         right: 7px; }
+    @media screen and (max-width: 1100px) {
+      .cta__description {
+        margin-top: 10px;
+        font-size: min(13.75vw, 4.8rem); } }
   .cta__button {
     font-size: 2.8rem;
     border-radius: 100vh;
@@ -133,6 +188,11 @@ figure {
         font-size: 25px;
         top: calc(50% - 40px / 2);
         right: -40px; }
+    @media screen and (max-width: 1100px) {
+      .cta__button {
+        width: 100%;
+        max-width: 500px;
+        font-size: min(6.25vw, 2.8rem); } }
   .cta__note {
     font-size: 1.8rem;
     margin-top: 30px;
@@ -153,10 +213,20 @@ figure {
   width: 30%;
   position: absolute;
   top: -20px; }
+  @media screen and (max-width: 768px) {
+    .atm__image {
+      position: initial;
+      width: 60%;
+      margin: 0 auto;
+      max-width: 200px; } }
 .atm__logos {
   width: 70%;
   margin-left: auto;
   margin-top: 20px; }
+  @media screen and (max-width: 768px) {
+    .atm__logos {
+      margin: 25px auto 0;
+      width: 100%; } }
 .atm__logo {
   width: 45%;
   text-align: center; }
@@ -169,8 +239,17 @@ figure {
     margin-top: 15px; }
   .atm__logo:first-child {
     margin: 0 auto; }
+  @media screen and (max-width: 768px) {
+    .atm__logo {
+      width: 80%;
+      max-width: 300px; } }
 .atm__flex {
   margin-top: 20px; }
+  @media screen and (max-width: 768px) {
+    .atm__flex {
+      flex-direction: column;
+      gap: 20px;
+      align-items: center; } }
 .atm__logos-note {
   font-size: 1.5rem;
   text-align: center;
@@ -179,6 +258,13 @@ figure {
   padding-left: 1em;
   text-indent: -1em;
   margin-top: 20px; }
+  @media screen and (max-width: 768px) {
+    .atm__logos-note {
+      text-indent: initial;
+      font-size: min(4vw, 1.5rem); } }
+  @media screen and (max-width: 768px) {
+    .atm__logos-note {
+      padding-left: 0; } }
 
 /* about */
 .about {
@@ -194,15 +280,28 @@ figure {
     font-family: "M PLUS Rounded 1c", sans-serif;
     background: url("../images/bg_front01.svg") no-repeat;
     background-position: center; }
+    @media screen and (max-width: 1100px) {
+      .about__heading {
+        font-size: 4vw;
+        background-size: contain;
+        padding-bottom: 20px; } }
+    @media screen and (max-width: 768px) {
+      .about__heading {
+        font-size: min(4.6875vw, 5rem); } }
   .about__page-links {
     justify-content: space-around;
     color: #fff; }
+    @media screen and (max-width: 768px) {
+      .about__page-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 35px; } }
   .about__link {
     background-color: #007daf;
     width: 15%;
     border-radius: 100vh;
     color: #fff;
-    font-size: 22px;
+    font-size: 2.2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -214,6 +313,14 @@ figure {
       margin-bottom: 0; }
     .about__link div {
       font-size: 2.5rem; }
+    @media screen and (max-width: 1100px) {
+      .about__link {
+        font-size: 1.76vw; } }
+    @media screen and (max-width: 768px) {
+      .about__link {
+        width: 30%;
+        max-width: 145px;
+        font-size: min(3.152vw, 2.2rem); } }
 
 /* usage section */
 .usage {
@@ -229,11 +336,22 @@ figure {
     font-family: "M PLUS Rounded 1c", sans-serif;
     background: url("../images/bg_front01.svg") no-repeat;
     background-position: center; }
+    @media screen and (max-width: 1100px) {
+      .usage__heading {
+        font-size: 4vw;
+        background-size: contain;
+        padding-bottom: 20px; } }
+    @media screen and (max-width: 768px) {
+      .usage__heading {
+        font-size: min(4.6875vw, 5rem); } }
   .usage__text {
     font-size: 2.4rem;
     margin-bottom: 0;
     text-align: center;
     font-weight: 500; }
+    @media screen and (max-width: 768px) {
+      .usage__text {
+        font-size: min(4vw, 2.4rem); } }
   .usage__note {
     font-size: 1.5rem;
     text-align: center;
@@ -241,11 +359,18 @@ figure {
     font-weight: 500;
     padding-left: 1em;
     text-indent: -1em; }
+    @media screen and (max-width: 768px) {
+      .usage__note {
+        text-indent: initial;
+        font-size: min(4vw, 1.5rem); } }
   .usage__examples {
     margin-top: 50px;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 30px 0; }
+    @media screen and (max-width: 768px) {
+      .usage__examples {
+        flex-direction: column; } }
   .usage__example-item {
     width: 47%;
     background-color: #fff;
@@ -256,6 +381,9 @@ figure {
       font-weight: bold;
       text-align: center;
       margin-top: 15px; }
+    @media screen and (max-width: 768px) {
+      .usage__example-item {
+        width: 100%; } }
 
 /* target section */
 .target {
@@ -270,14 +398,28 @@ figure {
     font-family: "M PLUS Rounded 1c", sans-serif;
     background: url("../images/bg_front01.svg") no-repeat;
     background-position: center; }
+    @media screen and (max-width: 1100px) {
+      .target__heading {
+        font-size: 4vw;
+        background-size: contain;
+        padding-bottom: 20px; } }
+    @media screen and (max-width: 768px) {
+      .target__heading {
+        font-size: min(4.6875vw, 5rem); } }
   .target__text {
     font-size: 2.4rem;
     margin-bottom: 0;
     text-align: center;
     font-weight: 500; }
+    @media screen and (max-width: 768px) {
+      .target__text {
+        font-size: min(4vw, 2.4rem); } }
   .target__people {
     justify-content: space-between;
     margin-top: 50px; }
+    @media screen and (max-width: 768px) {
+      .target__people {
+        flex-direction: column; } }
   .target__person {
     width: 30%; }
     .target__person img {
@@ -287,6 +429,12 @@ figure {
       margin-top: 15px;
       text-align: center;
       font-weight: bold; }
+    @media screen and (max-width: 768px) {
+      .target__person {
+        width: 70%;
+        margin: 0 auto; }
+        .target__person:not(:last-child) {
+          margin-bottom: 25px; } }
   .target__note {
     font-size: 1.5rem;
     text-align: center;
@@ -296,6 +444,10 @@ figure {
     text-indent: -1em;
     text-align: left;
     margin-top: 50px; }
+    @media screen and (max-width: 768px) {
+      .target__note {
+        text-indent: initial;
+        font-size: min(4vw, 1.5rem); } }
     .target__note.second {
       margin-top: 5px; }
 
@@ -313,11 +465,22 @@ figure {
     font-family: "M PLUS Rounded 1c", sans-serif;
     background: url("../images/bg_front01.svg") no-repeat;
     background-position: center; }
+    @media screen and (max-width: 1100px) {
+      .place__heading {
+        font-size: 4vw;
+        background-size: contain;
+        padding-bottom: 20px; } }
+    @media screen and (max-width: 768px) {
+      .place__heading {
+        font-size: min(4.6875vw, 5rem); } }
   .place__text {
     font-size: 2.4rem;
     margin-bottom: 0;
     text-align: center;
     font-weight: 500; }
+    @media screen and (max-width: 768px) {
+      .place__text {
+        font-size: min(4vw, 2.4rem); } }
   .place__note {
     font-size: 1.5rem;
     text-align: center;
@@ -325,6 +488,10 @@ figure {
     font-weight: 500;
     padding-left: 1em;
     text-indent: -1em; }
+    @media screen and (max-width: 768px) {
+      .place__note {
+        text-indent: initial;
+        font-size: min(4vw, 1.5rem); } }
     .place__note a {
       color: #de3685;
       text-decoration: underline; }
@@ -342,11 +509,22 @@ figure {
     font-family: "M PLUS Rounded 1c", sans-serif;
     background: url("../images/bg_front01.svg") no-repeat;
     background-position: center; }
+    @media screen and (max-width: 1100px) {
+      .repayment__heading {
+        font-size: 4vw;
+        background-size: contain;
+        padding-bottom: 20px; } }
+    @media screen and (max-width: 768px) {
+      .repayment__heading {
+        font-size: min(4.6875vw, 5rem); } }
   .repayment__text {
     font-size: 2.4rem;
     margin-bottom: 0;
     text-align: center;
     font-weight: 500; }
+    @media screen and (max-width: 768px) {
+      .repayment__text {
+        font-size: min(4vw, 2.4rem); } }
     .repayment__text.second {
       margin-top: 50px; }
   .repayment__note {
@@ -356,12 +534,19 @@ figure {
     font-weight: 500;
     padding-left: 1em;
     text-indent: -1em; }
+    @media screen and (max-width: 768px) {
+      .repayment__note {
+        text-indent: initial;
+        font-size: min(4vw, 1.5rem); } }
   .repayment .repayment__table-wrap {
     margin-top: 50px;
     border: 2px solid #9cc715;
     padding: 40px 100px;
     border-radius: 10px;
     text-align: center; }
+    @media screen and (max-width: 768px) {
+      .repayment .repayment__table-wrap {
+        padding: 0; } }
   .repayment .repayment__table {
     width: 100%;
     font-size: 1.6rem;
@@ -385,6 +570,10 @@ figure {
     padding-left: 1em;
     text-indent: -1em;
     text-align: left; }
+    @media screen and (max-width: 768px) {
+      .repayment__table-note {
+        text-indent: initial;
+        font-size: min(4vw, 1.5rem); } }
     .repayment__table-note.first {
       margin-top: 25px; }
 
@@ -402,11 +591,22 @@ figure {
     font-family: "M PLUS Rounded 1c", sans-serif;
     background: url("../images/bg_front01.svg") no-repeat;
     background-position: center; }
+    @media screen and (max-width: 1100px) {
+      .interest__heading {
+        font-size: 4vw;
+        background-size: contain;
+        padding-bottom: 20px; } }
+    @media screen and (max-width: 768px) {
+      .interest__heading {
+        font-size: min(4.6875vw, 5rem); } }
   .interest__text {
     font-size: 2.4rem;
     margin-bottom: 0;
     text-align: center;
     font-weight: 500; }
+    @media screen and (max-width: 768px) {
+      .interest__text {
+        font-size: min(4vw, 2.4rem); } }
     .interest__text + div {
       text-align: center; }
   .interest__note {
@@ -418,12 +618,19 @@ figure {
     text-indent: -1em;
     background: linear-gradient(transparent 45%, #ffff00 0%);
     display: inline-block; }
+    @media screen and (max-width: 768px) {
+      .interest__note {
+        text-indent: initial;
+        font-size: min(4vw, 1.5rem); } }
   .interest .interest__table-wrap {
     margin-top: 50px;
     border: 2px solid #9cc715;
     padding: 40px 100px;
     border-radius: 10px;
     text-align: center; }
+    @media screen and (max-width: 768px) {
+      .interest .interest__table-wrap {
+        padding: 0; } }
   .interest .interest__table {
     width: 100%;
     font-size: 1.6rem;
@@ -452,10 +659,23 @@ figure {
   .interest__qa-wrap {
     margin-top: 25px;
     gap: 30px; }
+    @media screen and (max-width: 768px) {
+      .interest__qa-wrap {
+        display: block;
+        position: relative; } }
   .interest__icon--question {
     width: 22%; }
+    @media screen and (max-width: 768px) {
+      .interest__icon--question {
+        width: 25%;
+        position: absolute;
+        top: 0;
+        left: 0; } }
   .interest__qa {
     width: 58%; }
+    @media screen and (max-width: 768px) {
+      .interest__qa {
+        width: 100%; } }
   .interest__question {
     position: relative;
     background: #fff;
@@ -481,6 +701,12 @@ figure {
       top: 50%;
       transform: translateY(-50%);
       left: -31px; }
+    @media screen and (max-width: 768px) {
+      .interest__question {
+        width: 65%;
+        margin-left: auto;
+        padding-left: 15px;
+        font-size: min(3.125vw, 2rem); } }
   .interest__answer {
     position: relative;
     background: #fff;
@@ -509,12 +735,32 @@ figure {
       top: 50%;
       right: -39px;
       transform: rotate(-17deg); }
+    @media screen and (max-width: 768px) {
+      .interest__answer {
+        width: 65%;
+        margin-right: auto;
+        padding-left: 15px;
+        font-size: min(3.125vw, 2rem); } }
   .interest__icon--answer {
     width: 20%;
     position: relative; }
     .interest__icon--answer img {
       position: absolute;
       bottom: 35px; }
+      @media screen and (max-width: 1100px) {
+        .interest__icon--answer img {
+          width: 150px;
+          bottom: 21%; } }
+      @media screen and (max-width: 768px) {
+        .interest__icon--answer img {
+          position: absolute;
+          right: 0;
+          bottom: 100px;
+          width: 30%;
+          max-width: 190px; } }
+    @media screen and (max-width: 768px) {
+      .interest__icon--answer {
+        width: 100%; } }
 
 /* flow section */
 .flow {
@@ -529,17 +775,29 @@ figure {
     font-family: "M PLUS Rounded 1c", sans-serif;
     background: url("../images/bg_front01.svg") no-repeat;
     background-position: center; }
+    @media screen and (max-width: 1100px) {
+      .flow__heading {
+        font-size: 4vw;
+        background-size: contain;
+        padding-bottom: 20px; } }
+    @media screen and (max-width: 768px) {
+      .flow__heading {
+        font-size: min(4.6875vw, 5rem); } }
   .flow__flex {
     margin-top: 50px;
     flex-wrap: wrap;
     justify-content: flex-start;
     gap: 30px; }
+    @media screen and (max-width: 768px) {
+      .flow__flex {
+        flex-direction: column; } }
   .flow__flex-item {
     width: 30%; }
     .flow__flex-item figcaption {
       padding: 15px;
       font-size: 1.6rem;
-      font-weight: 500; }
+      font-weight: 500;
+      height: 85px; }
     .flow__flex-item.green .flow__number {
       color: #fff;
       font-size: 24px;
@@ -588,6 +846,11 @@ figure {
       padding: 5px 0;
       margin: -1px;
       border-radius: 5px 5px 0 0; }
+    @media screen and (max-width: 768px) {
+      .flow__flex-item {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center; } }
   .flow__image {
     position: relative; }
     .flow__image:not(.last)::after {
@@ -599,6 +862,9 @@ figure {
       right: -25px;
       top: 50%;
       color: #9f9f9f; }
+      @media screen and (max-width: 768px) {
+        .flow__image:not(.last)::after {
+          display: none; } }
   .flow__flex-heading {
     font-size: 2.4rem;
     margin: 12px 0; }
@@ -613,6 +879,10 @@ figure {
     padding-left: 1em;
     text-indent: -1em;
     text-align: left; }
+    @media screen and (max-width: 768px) {
+      .flow__note {
+        text-indent: initial;
+        font-size: min(4vw, 1.5rem); } }
     .flow__note.first {
       margin-top: 50px; }
     .flow__note.second {
@@ -644,6 +914,17 @@ figure {
     background-position: initial;
     padding-bottom: 0;
     margin-bottom: 50px; }
+    @media screen and (max-width: 1100px) {
+      .inquiry__heading {
+        font-size: 4vw;
+        background-size: contain;
+        padding-bottom: 20px; } }
+    @media screen and (max-width: 768px) {
+      .inquiry__heading {
+        font-size: min(4.6875vw, 5rem); } }
+    @media screen and (max-width: 768px) {
+      .inquiry__heading {
+        margin-bottom: 25px; } }
   .inquiry__info {
     flex-direction: column;
     background-color: #fff;
@@ -657,6 +938,10 @@ figure {
   .inquiry__icon {
     width: 50%;
     margin: 0 auto; }
+    @media screen and (max-width: 768px) {
+      .inquiry__icon {
+        width: 80%;
+        max-width: 350px; } }
   .inquiry__tel {
     font-size: 1.8rem; }
     .inquiry__tel span {
@@ -669,6 +954,9 @@ figure {
     margin-top: 0; }
     .inquiry__datetime span {
       margin-left: 20px; }
+      @media screen and (max-width: 768px) {
+        .inquiry__datetime span {
+          display: block; } }
 
 /* footer */
 .footer {

@@ -1,5 +1,6 @@
 @import "_basic";
 @import "_mixin";
+@import "_functions";
 
 /* header */
 .header {
@@ -13,10 +14,18 @@
     padding: 0 20px;
     justify-content: space-between;
     align-items: center;
+    a:not(.header__contact-link) {
+      @include mq(sm) {
+        display: contents;
+      }
+    }
   }
   &__heading {
     margin: 0;
     width: 200px;
+    @include mq(sm) {
+      width: 140px;
+    }
   }
   &__flex-item--after {
     gap: 20px;
@@ -29,15 +38,24 @@
     padding: 10px;
     border-radius: 10px;
     line-height: 22px;
+    @include mq(sm) {
+      padding: 5px;
+    }
   }
   &__tel-image {
     margin-top: -3px;
+    @include mq(sm) {
+      display: none;
+    }
   }
 }
 
 /* main visual */
 .main-visual {
   margin-top: 79px;
+  @include mq(sm) {
+    margin-top: 62px;
+  }
 }
 
 /* cta section */
@@ -48,10 +66,19 @@
   &__flex-wrap {
     justify-content: space-between;
     gap: 25px;
+    @include mq(md) {
+      flex-direction: column;
+    }
   }
   &__flex-item {
     width: 50%;
     font-family: "M PLUS Rounded 1c", sans-serif;
+    justify-content: space-evenly;
+    align-items: center;
+    @include mq(md) {
+      flex-direction: column;
+      width: 100%;
+    }
   }
   &__title {
     font-size: 2.4rem;
@@ -63,13 +90,16 @@
     padding: 10px 30px;
     font-weight: bold;
     border-radius: 10px;
-    float: left;
+    @include mq(md) {
+      width: 250px;
+    }
   }
   &__description {
     font-size: 4.8rem;
     font-weight: bold;
     line-height: 1.2;
     position: relative;
+    margin-left: 0;
     span {
       font-size: 0.5em;
       &:first-of-type {
@@ -77,10 +107,15 @@
       }
       &.small {
         font-size: 1.6rem;
+        font-weight: bold;
         position: absolute;
         bottom: -17px;
         right: 7px;
       }
+    }
+    @include mq(md) {
+      margin-top: 10px;
+      font-size: min(13.75vw, 4.8rem);
     }
   }
   &__button {
@@ -105,6 +140,11 @@
         top: calc(50% - 40px / 2);
         right: -40px;
       }
+    }
+    @include mq(md) {
+      width: 100%;
+      max-width: 500px;
+      font-size: min(6.25vw, 2.8rem);
     }
   }
   &__note {
@@ -132,11 +172,21 @@
     width: 30%;
     position: absolute;
     top: -20px;
+    @include mq(sm) {
+      position: initial;
+      width: 60%;
+      margin: 0 auto;
+      max-width: 200px;
+    }
   }
   &__logos {
     width: 70%;
     margin-left: auto;
     margin-top: 20px;
+    @include mq(sm) {
+      margin: 25px auto 0;
+      width: 100%;
+    }
   }
   &__logo {
     width: 45%;
@@ -153,13 +203,25 @@
     &:first-child {
       margin: 0 auto;
     }
+    @include mq(sm) {
+      width: 80%;
+      max-width: 300px;
+    }
   }
   &__flex {
     margin-top: 20px;
+    @include mq(sm) {
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
   }
   &__logos-note {
     @include section-note();
     margin-top: 20px;
+    @include mq(sm) {
+      padding-left: 0;
+    }
   }
 }
 
@@ -173,13 +235,18 @@
   &__page-links {
     justify-content: space-around;
     color: #fff;
+    @include mq(sm) {
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 35px;
+    }
   }
   &__link {
     background-color: $basic-bg-color;
     width: 15%;
     border-radius: 100vh;
     color: #fff;
-    font-size: 22px;
+    font-size: 2.2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -192,6 +259,14 @@
     }
     div {
       font-size: 2.5rem;
+    }
+    @include mq(md) {
+      font-size: rs-fs(2.2);
+    }
+    @include mq(sm) {
+      width: 30%;
+      max-width: 145px;
+      font-size: min(3.152vw, 2.2rem);
     }
   }
 }
@@ -214,6 +289,9 @@
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 30px 0;
+    @include mq(sm) {
+      flex-direction: column;
+    }
   }
   &__example-item {
     width: 47%;
@@ -225,6 +303,9 @@
       font-weight: bold;
       text-align: center;
       margin-top: 15px;
+    }
+    @include mq(sm) {
+      width: 100%;
     }
   }
 }
@@ -241,6 +322,9 @@
   &__people {
     justify-content: space-between;
     margin-top: 50px;
+    @include mq(sm) {
+      flex-direction: column;
+    }
   }
   &__person {
     width: 30%;
@@ -252,6 +336,13 @@
       margin-top: 15px;
       text-align: center;
       font-weight: bold;
+    }
+    @include mq(sm) {
+      width: 70%;
+      margin: 0 auto;
+      &:not(:last-child) {
+        margin-bottom: 25px;
+      }
     }
   }
   &__note {
@@ -348,12 +439,25 @@
   &__qa-wrap {
     margin-top: 25px;
     gap: 30px;
+    @include mq(sm) {
+      display: block;
+      position: relative;
+    }
   }
   &__icon--question {
     width: 22%;
+    @include mq(sm) {
+      width: 25%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
   }
   &__qa {
     width: 58%;
+    @include mq(sm) {
+      width: 100%;
+    }
   }
   &__question {
     position: relative;
@@ -382,6 +486,12 @@
       top: 50%;
       transform: translateY(-50%);
       left: -31px;
+    }
+    @include mq(sm) {
+      width: 65%;
+      margin-left: auto;
+      padding-left: 15px;
+      font-size: min(3.125vw, 2rem);
     }
   }
   &__answer {
@@ -418,6 +528,12 @@
       right: -39px;
       transform: rotate(-17deg);
     }
+    @include mq(sm) {
+      width: 65%;
+      margin-right: auto;
+      padding-left: 15px;
+      font-size: min(3.125vw, 2rem);
+    }
   }
   &__icon--answer {
     width: 20%;
@@ -425,6 +541,20 @@
     img {
       position: absolute;
       bottom: 35px;
+      @include mq(md) {
+        width: 150px;
+        bottom: 21%;
+      }
+      @include mq(sm) {
+        position: absolute;
+        right: 0;
+        bottom: 100px;
+        width: 30%;
+        max-width: 190px;
+      }
+    }
+    @include mq(sm) {
+      width: 100%;
     }
   }
 }
@@ -440,6 +570,9 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     gap: 30px;
+    @include mq(sm) {
+      flex-direction: column;
+    }
   }
   &__flex-item {
     width: 30%;
@@ -447,6 +580,7 @@
       padding: 15px;
       font-size: 1.6rem;
       font-weight: 500;
+      height: 85px;
     }
     &.green {
       .flow__number {
@@ -488,6 +622,11 @@
         border-radius: 5px 5px 0 0;
       }
     }
+    @include mq(sm) {
+      width: 80%;
+      margin: 0 auto;
+      text-align: center;
+    }
   }
   &__image {
     position: relative;
@@ -501,6 +640,9 @@
         right: -25px;
         top: 50%;
         color: #9f9f9f;
+        @include mq(sm) {
+          display: none;
+        }
       }
     }
   }
@@ -544,6 +686,9 @@
     background-position: initial;
     padding-bottom: 0;
     margin-bottom: 50px;
+    @include mq(sm) {
+      margin-bottom: 25px;
+    }
   }
   &__info {
     flex-direction: column;
@@ -560,6 +705,10 @@
   &__icon {
     width: 50%;
     margin: 0 auto;
+    @include mq(sm) {
+      width: 80%;
+      max-width: 350px;
+    }
   }
   &__tel {
     font-size: 1.8rem;
@@ -575,6 +724,9 @@
     margin-top: 0;
     span {
       margin-left: 20px;
+      @include mq(sm) {
+        display: block;
+      }
     }
   }
 }

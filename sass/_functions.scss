@@ -1,0 +1,4 @@
+/* responsive font size */
+@function rs-fs($font-size) {
+  @return $font-size * 0.8 + vw;
+}

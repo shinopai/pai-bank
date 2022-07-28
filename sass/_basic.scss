@@ -1,3 +1,5 @@
+@import "_mixin";
+
 /* variables */
 $basic-color: #9cc715; /* 基本カラー */
 $basic-bg-color: #007daf; /* 基本背景カラー1 */
@@ -35,9 +37,21 @@ figure {
   display: flex;
 }
 .wrap {
-  padding: 0 10%;
+  padding: 0 5%;
+  margin: 0 auto;
   max-width: 1300px;
 }
 .wrap-vertical {
   padding: 7% 0;
+}
+.sm-only {
+  display: none;
+  @include mq(sm) {
+    display: block;
+  }
+}
+.md-only {
+  @include mq(sm) {
+    display: none;
+  }
 }
